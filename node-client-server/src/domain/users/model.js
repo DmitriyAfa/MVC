@@ -23,7 +23,7 @@ module.exports = {
     return newUser;
   },
   removeById: ({ id }) => {
-    const userIndex = users.findIndex((user) => user.od === String(id));
+    const userIndex = users.findIndex((user) => user.id === String(id));
 
     if (userIndex === -1) {
       throw new Error("Пользователь не найден");
