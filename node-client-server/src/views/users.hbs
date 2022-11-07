@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пользователи</title>
+</head>
+<body>
+  <h1>Создать нового пользователя</h1>
+  {{!-- URL экшена /users/create используется в controller --}}
+  <form action="/users/create" method="POST">
+  <label>Имя</label>
+  <input name="username" /><br><br>
+  <label>Возраст</label>
+  <input name="age" type="number" min="1" max="110" /><br><br>
+  <input type="submit" value="Отправить" />
+  </form>
+  <h1>Список пользователей</h1>
+  {{#each users}}
+  <div style="border: 1px solid yellowgreen; padding: 15px">
+    <h3>username - {{this.username}}</h3>
+    <p>Возраст - {{this.age}}</p>
+    <button>
+      Delete
+    </button>
+  </div>
+  {{/each}}
+</body>
+</html>
